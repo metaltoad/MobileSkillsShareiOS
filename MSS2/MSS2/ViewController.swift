@@ -13,17 +13,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var randomNumberLabel: UILabel!
     
     @IBAction func pushSecondVCButtonPressed(_ sender: Any) {
+        guard let controller = secondViewController else { return }
+        present(controller, animated: true, completion: nil)
+    }
+    
+    private var secondViewController: SecondViewController? {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let controller = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else { return }
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else { return nil }
         controller.delegate = self
         controller.modalTransitionStyle = .crossDissolve
-        present(controller, animated: true, completion: nil)
+        return controller
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "First VC"
     }
+    
+    deinit { print("deinit \(self)") }
 }
 
 extension ViewController: SecondViewControllerDelegate {

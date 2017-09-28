@@ -13,7 +13,6 @@ protocol SecondViewControllerDelegate: class {
 }
 
 class SecondViewController: UIViewController {
-    
     @IBOutlet weak var randomNumberLabel: UILabel!
     
     @IBAction func dismissButtonDidPress(_ sender: Any) {
@@ -22,12 +21,13 @@ class SecondViewController: UIViewController {
     }
     
     weak var delegate: SecondViewControllerDelegate?
-    var randomNumber: UInt32!
+    private var randomNumber: UInt32!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Second VC"
         randomNumber = arc4random_uniform(99)
         randomNumberLabel.text = String(randomNumber)
     }
+    
+    deinit { print("deinit \(self)") }
 }
