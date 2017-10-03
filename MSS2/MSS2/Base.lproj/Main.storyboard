@@ -52,6 +52,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MG8-g4-Mtx"/>
                     <connections>
+                        <outlet property="pushSecondVCButton" destination="jV4-0g-MTo" id="hBA-1X-hGX"/>
                         <outlet property="randomNumberLabel" destination="NqN-gi-IH8" id="Sdn-2V-it9"/>
                     </connections>
                 </viewController>

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var randomNumberLabel: UILabel!
+    @IBOutlet weak var pushSecondVCButton: UIButton!
     
     @IBAction func pushSecondVCButtonPressed(_ sender: Any) {
         guard let controller = secondViewController else { return }
@@ -35,5 +36,6 @@ class ViewController: UIViewController {
 extension ViewController: SecondViewControllerDelegate {
     func viewControllerDidDismiss(vc: SecondViewController, randomNumber: UInt32) {
         randomNumberLabel.text = String(randomNumber)
+        pushSecondVCButton.setTitle(String(randomNumber), for: .normal)
     }
 }
