@@ -29,13 +29,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="175.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZj-8A-qaM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgX-U9-0DI" userLabel="City">
-                                                    <rect key="frame" x="172" y="112" width="30.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="167" y="44" width="42.5" height="89"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-hR-TDD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-hR-TDD">
                                                     <rect key="frame" x="10" y="144" width="355" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -43,15 +46,20 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="BZj-8A-qaM" firstAttribute="top" secondItem="257-2L-ILU" secondAttribute="top" id="0S3-yj-xEb"/>
                                                 <constraint firstAttribute="bottom" secondItem="1cR-hR-TDD" secondAttribute="bottom" constant="11" id="3L2-F1-lb3"/>
                                                 <constraint firstItem="EgX-U9-0DI" firstAttribute="centerX" secondItem="257-2L-ILU" secondAttribute="centerX" id="7T5-ub-trE"/>
                                                 <constraint firstItem="1cR-hR-TDD" firstAttribute="leading" secondItem="257-2L-ILU" secondAttribute="leading" constant="10" id="GBO-dP-Dwa"/>
-                                                <constraint firstItem="EgX-U9-0DI" firstAttribute="top" secondItem="257-2L-ILU" secondAttribute="top" priority="250" constant="44" id="MKw-gy-cX1"/>
+                                                <constraint firstItem="EgX-U9-0DI" firstAttribute="top" secondItem="257-2L-ILU" secondAttribute="top" priority="749" constant="44" id="MKw-gy-cX1"/>
                                                 <constraint firstAttribute="trailing" secondItem="1cR-hR-TDD" secondAttribute="trailing" constant="10" id="MbG-Wb-IBo"/>
+                                                <constraint firstItem="BZj-8A-qaM" firstAttribute="leading" secondItem="257-2L-ILU" secondAttribute="leading" id="as2-yu-0u6"/>
+                                                <constraint firstAttribute="trailing" secondItem="BZj-8A-qaM" secondAttribute="trailing" id="euq-MZ-4bU"/>
+                                                <constraint firstItem="1cR-hR-TDD" firstAttribute="top" secondItem="BZj-8A-qaM" secondAttribute="bottom" id="mPU-uh-4v0"/>
                                                 <constraint firstItem="1cR-hR-TDD" firstAttribute="top" secondItem="EgX-U9-0DI" secondAttribute="bottom" constant="11" id="wxj-bq-ci9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cityImage" destination="BZj-8A-qaM" id="4kc-Qo-2z8"/>
                                             <outlet property="descriptionLabel" destination="1cR-hR-TDD" id="Ig1-ID-DAt"/>
                                             <outlet property="nameLabel" destination="EgX-U9-0DI" id="KR6-7Z-eqP"/>
                                         </connections>
